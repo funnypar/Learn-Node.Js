@@ -1,0 +1,68 @@
+[
+    {
+        "id": 0,
+        "bookName": "mein herz in zwei welten",
+        "image": "herz",
+        "writer": "jojo moyes",
+        "genre": "roman",
+        "quantity": "50",
+        "price": "180000",
+        "double": false,
+        "description": "Das ist ein gutes Buch von jojo moyes ..."
+    },
+    {
+        "id": 1,
+        "bookName": "Duden",
+        "image": "duden",
+        "writer": "unknown",
+        "genre": "reference",
+        "quantity": "20",
+        "price": "200000",
+        "double": false,
+        "description": "Das ist ein gutes wörterbuch ..."
+    },
+    {
+        "id": 2,
+        "bookName": "harry poter 1",
+        "image": "harryPoter1",
+        "writer": "j.k.rowling",
+        "genre": "fantasy",
+        "quantity": "70",
+        "price": "120000",
+        "double": false,
+        "description": "That is really exciting book ..."
+    },
+    {
+        "id": 3,
+        "bookName": "harry poter 2",
+        "image": "harryPoter2",
+        "writer": "j.k.rowling",
+        "genre": "fantasy",
+        "quantity": "60",
+        "price": "140000",
+        "double": false,
+        "description": "That is really exciting book ..."
+    },
+    {
+        "id": 4,
+        "bookName": "the death of ivan ilyich",
+        "image": "theDeathOfIvanIlyich",
+        "writer": "leo tolstoy",
+        "genre": ["Fiction", "Novella", "Comedy"],
+        "quantity": "200",
+        "price": "67000",
+        "double": true,
+        "description": "That is really exciting book that about death of some person which ..."
+    },
+    {
+        "id": 5,
+        "bookName": "a fraction of the whole",
+        "image": "aFractionOfTheWhole",
+        "writer": "steve toltz",
+        "genre": ["Novel", "Domestic Fiction"],
+        "quantity": "32",
+        "price": "32000",
+        "double": true,
+        "description": "That is really exciting book that about some person which ..."
+    }
+]
