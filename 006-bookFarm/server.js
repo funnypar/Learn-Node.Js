@@ -14,7 +14,20 @@ const tempCard = fs.readFileSync(
 );
 // Datas
 const datas = fs.readFileSync(`${__dirname}/datas/datas.json`, "utf-8");
-const data = JSON.parse(datas);
+const dataObj = JSON.parse(datas);
+
+// Functions
+
+const templateReplace = (temp, product) => {
+    let output = temp.replace(/{%BOOKTITLE%}/g, product.bookName);
+    output = output.replace(/{%COUNT%}/g, product.count);
+    output = output.replace(/{%PRICE%}/g, product.price);
+    output = output.replace(/{{%ID%}}/g, product.id);
+
+    if (!product.double)
+        output = output.replace(/{%NOT_DOUBLE%}/g, "not_double");
+    return output;
+};
 
 // Server
 const server = http.createServer((req, res) => {
@@ -23,7 +36,13 @@ const server = http.createServer((req, res) => {
     //Overview page
     if (pathName === "/" || pathName === "/overview") {
         res.writeHead(200, { "content-type": "text/html" });
-        res.end(tempOverview);
+
+        const cardHtml = dataObj
+            .map((el) => templateReplace(tempCard, el))
+            .join("");
+        const output = tempOverview.replace(/{%PRODUCT_CARDS%}/g, cardHtml);
+
+        res.end(output);
     }
     // Product page
     else if (pathName === "/product") {

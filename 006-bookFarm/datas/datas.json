@@ -5,7 +5,7 @@
         "image": "herz",
         "writer": "jojo moyes",
         "genre": "roman",
-        "quantity": "50",
+        "count": "50",
         "price": "180000",
         "double": false,
         "description": "Louisa Clark wagt in New York einen Neuanfang, wo sie als Assistentin der reichen Agnes Gopnik arbeiten soll. Doch die glamouröse neue Welt ist so ganz anders als ihr altes Leben in England. Außerdem ist dort noch ihr Freund Sam, den sie schrecklich vermisst."
@@ -16,7 +16,7 @@
         "image": "duden",
         "writer": "unknown",
         "genre": "reference",
-        "quantity": "20",
+        "count": "20",
         "price": "200000",
         "double": false,
         "description": "Das ist ein gutes wörterbuch ..."
@@ -27,7 +27,7 @@
         "image": "harryPoter1",
         "writer": "j.k.rowling",
         "genre": "fantasy",
-        "quantity": "70",
+        "count": "70",
         "price": "120000",
         "double": false,
         "description": "That is really exciting book ..."
@@ -38,7 +38,7 @@
         "image": "harryPoter2",
         "writer": "j.k.rowling",
         "genre": "fantasy",
-        "quantity": "60",
+        "count": "60",
         "price": "140000",
         "double": false,
         "description": "That is really exciting book ..."
@@ -49,7 +49,7 @@
         "image": "theDeathOfIvanIlyich",
         "writer": "leo tolstoy",
         "genre": ["Fiction", "Novella", "Comedy"],
-        "quantity": "200",
+        "count": "200",
         "price": "67000",
         "double": true,
         "description": "That is really exciting book that about death of some person which ..."
@@ -60,7 +60,7 @@
         "image": "aFractionOfTheWhole",
         "writer": "steve toltz",
         "genre": ["Novel", "Domestic Fiction"],
-        "quantity": "32",
+        "count": "32",
         "price": "32000",
         "double": true,
         "description": "That is really exciting book that about some person which ..."
