@@ -23,6 +23,9 @@ const templateReplace = (temp, product) => {
     output = output.replace(/{%COUNT%}/g, product.count);
     output = output.replace(/{%PRICE%}/g, product.price);
     output = output.replace(/{{%ID%}}/g, product.id);
+    output = output.replace(/{%WRITER%}/g, product.writer);
+    output = output.replace(/{%GANRE%}/g, product.genre);
+    output = output.replace(/{%DESCRIPTION%}/g, product.description);
 
     if (!product.double)
         output = output.replace(/{%NOT_DOUBLE%}/g, "not_double");
@@ -31,10 +34,10 @@ const templateReplace = (temp, product) => {
 
 // Server
 const server = http.createServer((req, res) => {
-    const pathName = req.url;
+    const { query, pathname } = url.parse(req.url, true);
 
     //Overview page
-    if (pathName === "/" || pathName === "/overview") {
+    if (pathname === "/" || pathname === "/overview") {
         res.writeHead(200, { "content-type": "text/html" });
 
         const cardHtml = dataObj
@@ -45,9 +48,12 @@ const server = http.createServer((req, res) => {
         res.end(output);
     }
     // Product page
-    else if (pathName === "/product") {
+    else if (pathname === "/product") {
         res.writeHead(200, { "content-type": "text/html" });
-        res.end(tempProduct);
+
+        const product = dataObj[query.id];
+        const productPage = templateReplace(tempProduct, product);
+        res.end(productPage);
     }
     //Not Found page
     else {
