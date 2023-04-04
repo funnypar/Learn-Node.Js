@@ -2,18 +2,18 @@
     {
         "id": 0,
         "bookName": "mein herz in zwei welten",
-        "image": "herz",
+        "icon": "&#128477",
         "writer": "jojo moyes",
         "genre": "roman",
         "count": "50",
         "price": "180000",
-        "double": false,
+        "double": true,
         "description": "Louisa Clark wagt in New York einen Neuanfang, wo sie als Assistentin der reichen Agnes Gopnik arbeiten soll. Doch die glamouröse neue Welt ist so ganz anders als ihr altes Leben in England. Außerdem ist dort noch ihr Freund Sam, den sie schrecklich vermisst."
     },
     {
         "id": 1,
-        "bookName": "Duden",
-        "image": "duden",
+        "bookName": "Duden Wörterbuch",
+        "icon": "&#129299",
         "writer": "unknown",
         "genre": "reference",
         "count": "20",
@@ -24,18 +24,18 @@
     {
         "id": 2,
         "bookName": "harry poter 1",
-        "image": "harryPoter1",
+        "icon": "&#129497",
         "writer": "j.k.rowling",
         "genre": "fantasy",
         "count": "70",
         "price": "120000",
-        "double": false,
+        "double": true,
         "description": "That is really exciting book ..."
     },
     {
         "id": 3,
         "bookName": "harry poter 2",
-        "image": "harryPoter2",
+        "icon": "&#129497",
         "writer": "j.k.rowling",
         "genre": "fantasy",
         "count": "60",
@@ -46,7 +46,7 @@
     {
         "id": 4,
         "bookName": "the death of ivan ilyich",
-        "image": "theDeathOfIvanIlyich",
+        "icon": "&#128477",
         "writer": "leo tolstoy",
         "genre": ["Fiction", "Novella", "Comedy"],
         "count": "200",
@@ -57,7 +57,7 @@
     {
         "id": 5,
         "bookName": "a fraction of the whole",
-        "image": "aFractionOfTheWhole",
+        "icon": "&#128477",
         "writer": "steve toltz",
         "genre": ["Novel", "Domestic Fiction"],
         "count": "32",

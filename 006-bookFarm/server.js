@@ -26,6 +26,7 @@ const templateReplace = (temp, product) => {
     output = output.replace(/{%WRITER%}/g, product.writer);
     output = output.replace(/{%GANRE%}/g, product.genre);
     output = output.replace(/{%DESCRIPTION%}/g, product.description);
+    output = output.replace(/{%IMAGE%}/g, product.icon);
 
     if (!product.double)
         output = output.replace(/{%NOT_DOUBLE%}/g, "not_double");

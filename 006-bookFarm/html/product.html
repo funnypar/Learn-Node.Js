@@ -104,7 +104,6 @@ body {
 .space-between-flex {
     width: 80%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 /* ------------------------------------------ General code ------------------------------------- */
@@ -166,7 +165,7 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
-    row-gap: 1rem;
+    row-gap: 2.5rem;
 }
 .card-infos h4 span {
     margin-right: 2rem;
@@ -196,9 +195,7 @@ header {
     color: #fff;
     text-decoration: none;
 }
-.buy-icon {
-    transform: skew(-25deg);
-}
+
 .card-shopping a span {
     margin-right: 1rem;
 }
@@ -211,7 +208,9 @@ header {
     padding: 10rem 5rem;
     height: 30rem;
 }
-
+span{
+    font-size: 2.5rem;
+}
     </style>
 </head>
 <body>
@@ -222,14 +221,14 @@ header {
         <section class="card-section">
             <div class="card-item">
                 <img src="../media/duden.png" alt="Duden" class="card-img">
-                <h2 class="card-title center-flex"><span><img src="../media/book.png" alt="book"></span>{%BOOKTITLE%}</h2>
+                <h2 class="card-title center-flex"><span>&#128214</span>{%BOOKTITLE%}</h2>
                 <div class="card-infos">
-                    <h4 class="space-between-flex"><span><img src="../media/writing.png" alt="writer"></span>{%WRITER%}</h4>
-                    <h4 class="space-between-flex"><span><img src="../media/box.png" alt="count"></span>{%COUNT%}</h4>
-                    <h4 class="space-between-flex"><span><img src="../media/genre.png" alt="genre"></span>{%GANRE%}</h4>
-                    <h4 class="space-between-flex"><span><img src="../media/price-tag.png" alt="price"></span>{%PRICE%} $</h4>
+                    <h4 class="space-between-flex"><span>&#128395</span>{%WRITER%}</h4>
+                    <h4 class="space-between-flex"><span>&#128230</span>{%COUNT%}</h4>
+                    <h4 class="space-between-flex"><span>&#128681</span>{%GANRE%}</h4>
+                    <h4 class="space-between-flex"><span>💰</span>{%PRICE%} $</h4>
                 </div>
-                <div class="card-shopping "><a href="#" class="center-flex" ><span><img src="../media/add-to-cart.png" alt="buy" class="buy-icon"></span>Add to shopping card ({%PRICE%} T)</a></div>
+                <div class="card-shopping "><a href="#" class="center-flex" ><span>🔖</span>Add to shopping card ({%PRICE%} T)</a></div>
                 <p class="card-description">{%DESCRIPTION%}</p>                        
             </div>
         </section>
