@@ -1,0 +1,15 @@
+{
+    "name": "book-farm",
+    "version": "1.0.0",
+    "description": "Mopano try to learn Node.js and backend",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "author": "Mopano",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^2.0.22",
+        "slugify": "^1.6.6"
+    }
+}

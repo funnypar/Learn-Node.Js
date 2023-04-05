@@ -1,7 +1,10 @@
-// Requires
+// core Requires
 const http = require("http");
 const url = require("url");
 const fs = require("fs");
+// modules Requires
+const templateReplace = require("./modules/templateReplace");
+
 // HTML pages
 const tempOverview = fs.readFileSync(
     `${__dirname}/html/overview.html`,
@@ -15,23 +18,6 @@ const tempCard = fs.readFileSync(
 // Datas
 const datas = fs.readFileSync(`${__dirname}/datas/datas.json`, "utf-8");
 const dataObj = JSON.parse(datas);
-
-// Functions
-
-const templateReplace = (temp, product) => {
-    let output = temp.replace(/{%BOOKTITLE%}/g, product.bookName);
-    output = output.replace(/{%COUNT%}/g, product.count);
-    output = output.replace(/{%PRICE%}/g, product.price);
-    output = output.replace(/{{%ID%}}/g, product.id);
-    output = output.replace(/{%WRITER%}/g, product.writer);
-    output = output.replace(/{%GANRE%}/g, product.genre);
-    output = output.replace(/{%DESCRIPTION%}/g, product.description);
-    output = output.replace(/{%IMAGE%}/g, product.icon);
-
-    if (!product.double)
-        output = output.replace(/{%NOT_DOUBLE%}/g, "not_double");
-    return output;
-};
 
 // Server
 const server = http.createServer((req, res) => {
