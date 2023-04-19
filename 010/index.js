@@ -29,14 +29,31 @@ writeFilePromise = (file, data) => {
     });
 };
 
-superagent
-    .get("https://api.chucknorris.io/jokes/random")
-    .then((result) => {
-        writeFilePromise("./jokeCategories.txt", result.body.value);
-    })
-    .then(() => {
-        console.log("alles ist ordnung ;) ");
-    })
-    .catch((err) => {
+// With promise and then method
+
+// superagent
+//     .get("https://api.chucknorris.io/jokes/random")
+//     .then((result) => {
+//         writeFilePromise("./jokeCategories.txt", result.body.value);
+//     })
+//     .then(() => {
+//         console.log("alles ist ordnung ;) ");
+//     })
+//     .catch((err) => {
+//         console.log(`Error -- > ${err.massage}`);
+//     });
+
+// With async and await
+
+const getJoke = async () => {
+    try {
+        const data = await superagent.get(
+            "https://api.chucknorris.io/jokes/random"
+        );
+
+        await writeFilePromise("./jokeCategories.txt", data.body.value);
+    } catch (err) {
         console.log(`Error -- > ${err.massage}`);
-    });
+    }
+};
+getJoke();
