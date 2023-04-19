@@ -45,15 +45,34 @@ writeFilePromise = (file, data) => {
 
 // With async and await
 
-const getJoke = async () => {
-    try {
-        const data = await superagent.get(
-            "https://api.chucknorris.io/jokes/random"
-        );
+// const getJoke = async () => {
+//     try {
+//         const data = await superagent.get(
+//             "https://api.chucknorris.io/jokes/random"
+//         );
 
-        await writeFilePromise("./jokeCategories.txt", data.body.value);
+//         await writeFilePromise("./jokeCategories.txt", data.body.value);
+//     } catch (err) {
+//         console.log(`Error -- > ${err.massage}`);
+//     }
+// };
+// getJoke();
+
+// Getting many responses in one async
+
+const getJokes = async () => {
+    try {
+        const res1 = superagent.get("https://api.chucknorris.io/jokes/random");
+        const res2 = superagent.get("https://api.chucknorris.io/jokes/random");
+        const res3 = superagent.get("https://api.chucknorris.io/jokes/random");
+
+        const allPromise = await Promise.all([res1, res2, res3]);
+        const datas = allPromise.map((el) => el.body.value);
+
+        await writeFilePromise("./jokeCategories.txt", datas.join("\n"));
     } catch (err) {
-        console.log(`Error -- > ${err.massage}`);
+        throw err;
     }
 };
-getJoke();
+
+getJokes();
