@@ -1,18 +1,23 @@
+// Core requirements
 const express = require('express');
-
+const fs = require('fs');
+// Variables
+const port = 8080;
+// Build app
 const app = express();
 
-const port = 8080;
+const jsonData = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`, 'utf-8')
+);
 
-app.get('/', (req, res) => {
+app.get('/api/v1/authors', (req, res) => {
   res.status(200).json({
-    author: 'Steve Toltz',
-    books: ['A Fraction of the Whole', 'Here Goes Nothing', 'Quicksand'],
+    status: 'access',
+    results: jsonData.length,
+    data: {
+      jsonData,
+    },
   });
 });
-app.post('/', (req, res) => {
-  res.status(200).send('Hi From Post !!!');
-});
-app.listen(port, () => {
-  console.log('hello from the server !!!');
-});
+
+app.listen(port, () => {});
