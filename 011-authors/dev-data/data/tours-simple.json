@@ -16,7 +16,6 @@
     "imageCover": "tour-1-cover.jpg",
     "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"]
   },
-
   {
     "id": 1,
     "name": "Fyodor Dostoevsky",
@@ -47,7 +46,6 @@
     "imageCover": "tour-2-cover.jpg",
     "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"]
   },
-
   {
     "id": 2,
     "name": "Albert Camus",
@@ -80,7 +78,6 @@
     "imageCover": "tour-3-cover.jpg",
     "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"]
   },
-
   {
     "id": 3,
     "name": "George Orwell",
@@ -104,7 +101,6 @@
     "imageCover": "tour-4-cover.jpg",
     "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"]
   },
-
   {
     "id": 4,
     "name": "J.K.Rowling",
@@ -169,7 +165,6 @@
     "imageCover": "tour-5-cover.jpg",
     "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"]
   },
-
   {
     "id": 5,
     "name": "Jean Paul Sartre",
@@ -190,7 +185,6 @@
     "imageCover": "tour-6-cover.jpg",
     "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"]
   },
-
   {
     "id": 6,
     "name": "Ivan Klíma",
@@ -218,7 +212,6 @@
     "imageCover": "tour-7-cover.jpg",
     "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"]
   },
-
   {
     "id": 7,
     "name": "Nikolai Gogol",
@@ -249,7 +242,6 @@
     "imageCover": "tour-8-cover.jpg",
     "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"]
   },
-
   {
     "id": 8,
     "name": "Jonathan Franzen",
@@ -273,6 +265,32 @@
       "The Discomfort Zone: A Personal History"
     ],
     "description": "Jonathan Earl Franzen (born August 17, 1959) is an American novelist and essayist. His 2001 novel The Corrections, a sprawling, satirical family drama, drew widespread critical acclaim, earned Franzen a National Book Award, was a Pulitzer Prize for Fiction finalist, earned a James Tait Black Memorial Prize, and was shortlisted for the International Dublin Literary Award. His novel Freedom (2010) garnered similar praise and led to an appearance on the cover of Time magazine alongside the headline \"Great American Novelist\".Franzen's latest novel Crossroads was published in 2021, and is the first in a projected trilogy.",
+    "imageCover": "tour-9-cover.jpg",
+    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+  },
+  {
+    "id": 9,
+    "name": "Friedrich Nietzsche",
+    "age": false,
+    "bookNumber": 12,
+    "nationality": "german",
+    "ratingsAverage": 8.2,
+    "prize": false,
+    "books": [
+      "Thus Spoke Zarathustra",
+      "God is dead",
+      "Beyond Good and Evil",
+      "The Gay Science",
+      "The Antichrist",
+      "On the Genealogy of Morality",
+      "Ecce Homo",
+      "The Birth of Tragedy",
+      "Human, All Too Human",
+      "On Truth and Lies in a Nonmoral Sense",
+      "The Dawn of Day",
+      "Nietzsche contra Wagner"
+    ],
+    "description": "Friedrich Wilhelm Nietzsche was a German philosopher, prose poet, cultural critic, philologist, and composer whose work has exerted a profound influence on contemporary philosophy. He began his career as a classical philologist before turning to philosophy.",
     "imageCover": "tour-9-cover.jpg",
     "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
   }
