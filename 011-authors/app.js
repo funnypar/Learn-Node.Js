@@ -10,13 +10,28 @@ app.use(express.json());
 const authors = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`, 'utf-8')
 );
-// Read Data
+// Read Datas
 app.get('/api/v1/authors', (req, res) => {
   res.status(200).json({
     status: 'access',
     results: authors.length,
     data: {
       authors,
+    },
+  });
+});
+// Read Just one Data
+app.get('/api/v1/authors/:id', (req, res) => {
+  const author = authors.find((el) => el.id === +req.params.id);
+  if (!author)
+    res.status(404).json({
+      status: 'Not Found',
+      massage: 'Your Id has not found !!!',
+    });
+  res.status(200).json({
+    status: 'access',
+    data: {
+      author,
     },
   });
 });
