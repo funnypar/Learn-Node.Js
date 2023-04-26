@@ -35,7 +35,7 @@ app.get('/api/v1/authors/:id', (req, res) => {
     },
   });
 });
-// Update Data
+// Post Data
 app.post('/api/v1/authors', (req, res) => {
   const newId = authors[authors.length - 1].id + 1;
   const newAuthor = Object.assign({ id: newId }, req.body);
@@ -52,6 +52,21 @@ app.post('/api/v1/authors', (req, res) => {
       });
     }
   );
+});
+// Update data
+app.patch('/api/vi/api:id', (req, res) => {
+  if (req.body.id > authors.length) {
+    res.status(404).json({
+      status: 'Not Found',
+      massage: 'This id is not valid !!!',
+    });
+  }
+  res.status(200).json({
+    status: 'updated',
+    data: {
+      author,
+    },
+  });
 });
 
 app.listen(port, () => {});
