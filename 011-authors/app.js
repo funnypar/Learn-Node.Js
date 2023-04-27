@@ -68,5 +68,18 @@ app.patch('/api/vi/api:id', (req, res) => {
     },
   });
 });
+// Delete Data
+app.delete('/api/vi/api:id', (req, res) => {
+  if (req.body.id > authors.length) {
+    res.status(404).json({
+      status: 'Not Found',
+      massage: 'This id is not valid !!!',
+    });
+  }
+  res.status(204).json({
+    status: 'deleted',
+    data: null,
+  });
+});
 
 app.listen(port, () => {});
