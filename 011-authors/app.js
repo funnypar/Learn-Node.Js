@@ -13,6 +13,7 @@ const authors = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`, 'utf-8')
 );
 
+// Tour Handler
 const getAllAuthors = (req, res) => {
   res.status(200).json({
     status: 'access',
@@ -79,12 +80,50 @@ const deleteAuthor = (req, res) => {
     data: null,
   });
 };
-
+// User Handler
+const getAllBooks = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    massage: 'This Part has not implemented !!!',
+  });
+};
+const postBook = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    massage: 'This Part has not implemented !!!',
+  });
+};
+const getOneBook = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    massage: 'This Part has not implemented !!!',
+  });
+};
+const updateBook = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    massage: 'This Part has not implemented !!!',
+  });
+};
+const deleteBook = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    massage: 'This Part has not implemented !!!',
+  });
+};
+// Route
 app.route('/api/v1/authors').get(getAllAuthors).post(postAuthor);
 app
   .route('/api/v1/authors/:id')
   .get(getOneAuthor)
   .patch(updateAuthor)
   .delete(deleteAuthor);
+
+app.route('/api/v1/books').get(getAllBooks).post(postBook);
+app
+  .route('/api/v1/books/:id')
+  .get(getOneBook)
+  .patch(updateBook)
+  .delete(deleteBook);
 
 app.listen(port, () => {});
