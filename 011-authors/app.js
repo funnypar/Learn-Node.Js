@@ -1,12 +1,12 @@
 // Core requirements
 const express = require('express');
 const fs = require('fs');
-// Development modules
-
+const morgan = require('morgan');
 // Variables
 const port = 8080;
 // Build app
 const app = express();
+app.use(morgan('dev'));
 app.use(express.json());
 
 const authors = JSON.parse(
