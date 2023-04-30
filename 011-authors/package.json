@@ -4,6 +4,7 @@
   "description": "In this project i want to learn Express and MongoDB",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mopano",
