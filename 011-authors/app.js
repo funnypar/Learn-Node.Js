@@ -112,18 +112,20 @@ const deleteBook = (req, res) => {
   });
 };
 // Route
-app.route('/api/v1/authors').get(getAllAuthors).post(postAuthor);
-app
-  .route('/api/v1/authors/:id')
+const authorsRouter = express.Router();
+const booksRouter = express.Router();
+
+authorsRouter.route('/').get(getAllAuthors).post(postAuthor);
+authorsRouter
+  .route('/:id')
   .get(getOneAuthor)
   .patch(updateAuthor)
   .delete(deleteAuthor);
 
-app.route('/api/v1/books').get(getAllBooks).post(postBook);
-app
-  .route('/api/v1/books/:id')
-  .get(getOneBook)
-  .patch(updateBook)
-  .delete(deleteBook);
+booksRouter.route('/').get(getAllBooks).post(postBook);
+booksRouter.route('/:id').get(getOneBook).patch(updateBook).delete(deleteBook);
+
+app.use('/api/v1/authors', authorsRouter);
+app.use('/api/v1/books', authorsRouter);
 
 app.listen(port, () => {});
