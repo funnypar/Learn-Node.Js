@@ -1,3 +1,12 @@
+exports.checkId = (req, res, next, value) => {
+  if (value > books.length) {
+    return res.status(404).json({
+      status: 'Not Found',
+      massage: 'This id is not valid !!!',
+    });
+  }
+  next();
+};
 exports.getAllBooks = (req, res) => {
   res.status(500).json({
     status: 'error',

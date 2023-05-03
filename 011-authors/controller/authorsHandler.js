@@ -4,7 +4,15 @@ const express = require('express');
 const authors = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`, 'utf-8')
 );
-
+exports.checkId = (req, res, next, value) => {
+  if (value > authors.length) {
+    return res.status(404).json({
+      status: 'Not Found',
+      massage: 'This id is not valid !!!',
+    });
+  }
+  next();
+};
 exports.getAllAuthors = (req, res) => {
   res.status(200).json({
     status: 'access',
@@ -16,11 +24,6 @@ exports.getAllAuthors = (req, res) => {
 };
 exports.getOneAuthor = (req, res) => {
   const author = authors.find((el) => el.id === +req.params.id);
-  if (!author)
-    res.status(404).json({
-      status: 'Not Found',
-      massage: 'Your Id has not found !!!',
-    });
   res.status(200).json({
     status: 'access',
     data: {
@@ -46,12 +49,7 @@ exports.postAuthor = (req, res) => {
   );
 };
 exports.updateAuthor = (req, res) => {
-  if (req.body.id > authors.length) {
-    res.status(404).json({
-      status: 'Not Found',
-      massage: 'This id is not valid !!!',
-    });
-  }
+  const author = authors.find((el) => el.id === +req.params.id);
   res.status(200).json({
     status: 'updated',
     data: {
@@ -60,12 +58,6 @@ exports.updateAuthor = (req, res) => {
   });
 };
 exports.deleteAuthor = (req, res) => {
-  if (req.body.id > authors.length) {
-    res.status(404).json({
-      status: 'Not Found',
-      massage: 'This id is not valid !!!',
-    });
-  }
   res.status(204).json({
     status: 'deleted',
     data: null,
