@@ -13,6 +13,15 @@ exports.checkId = (req, res, next, value) => {
   }
   next();
 };
+exports.checkBody = (req, res, next) => {
+  if (!req.body.name || !req.body.bookNumber) {
+    return res.status(400).json({
+      status: 'Bad Request',
+      message: 'Invalid value !!!',
+    });
+  }
+  next();
+};
 exports.getAllAuthors = (req, res) => {
   res.status(200).json({
     status: 'access',

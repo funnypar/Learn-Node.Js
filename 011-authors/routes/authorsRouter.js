@@ -6,10 +6,12 @@ const {
   updateAuthor,
   deleteAuthor,
   checkId,
+  checkBody,
 } = require('../controller/authorsHandler');
 const authorsRouter = express.Router();
 authorsRouter.param('id', checkId);
-authorsRouter.route('/').get(getAllAuthors).post(postAuthor);
+
+authorsRouter.route('/').get(getAllAuthors).post(checkBody, postAuthor);
 authorsRouter
   .route('/:id')
   .get(getOneAuthor)
